@@ -1,6 +1,7 @@
 import mePicture from "./assets/me.jpeg";
 import { BuildingOffice2Icon, MapPinIcon, EnvelopeIcon, LinkIcon, PrinterIcon, MoonIcon } from "@heroicons/react/24/solid";
-import { Skill, skills } from "./utils/configs";
+import { experiences, Skill, skills } from "./utils/configs";
+import ExperienceBox from "./ExperienceBox";
 
 const yearCalculator = () => {
     const date1 = new Date("08/01/2016");
@@ -74,6 +75,11 @@ function App() {
                         <li>🛠️ Experienced in working in multicultural and rapidly changing environment.</li>
                         <li>📜 Bachelor’s degree in Engineering Information Technology (Computer Science).</li>
                     </ul>
+                    <div className="my-6 border-2 border-gray-700 print:my-4"></div>
+                    <h1 className="mb-4 text-2xl text-gray-300 print:mb-2 print:text-lg">Experiences</h1>
+                    {experiences.map((experience) => (
+                        <ExperienceBox key={experience.id} experience={experience} />
+                    ))}
                 </div>
             </section>
         </div>

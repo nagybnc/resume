@@ -19,10 +19,8 @@ export interface Project {
     id: number;
     title: string;
     customer: string;
-    data: {
-        participation: string;
-        technologies: string;
-    };
+    participation: string;
+    technologies: string;
 }
 export interface Experience {
     id: number;
@@ -153,20 +151,16 @@ export const experiences: Experience[] = [
                 id: 0,
                 title: "Project 1",
                 customer: "Automotive (JIRA Plugin Development)",
-                data: {
-                    participation:
-                        "Participated in project start from scratch. Played active part in Process of tasks clarification during sprint planning. Demonsrates self-management skills, works without supervision. Plays a mentor role for less experienced colleagues. Customer-facing role.",
-                    technologies: "React, TypeScript, Redux, Material-UI, Cypress, Jest, Testing Library",
-                },
+                participation:
+                    "Participated in project start from scratch. Played active part in Process of tasks clarification during sprint planning. Demonsrates self-management skills, works without supervision. Plays a mentor role for less experienced colleagues. Customer-facing role.",
+                technologies: "React, TypeScript, Redux, Material-UI, Cypress, Jest, Testing Library",
             },
             {
                 id: 1,
                 title: "Project 2",
                 customer: "Banking (Dashboard App)",
-                data: {
-                    participation: "Produced good-quality code, followed project style guide. Refactoring for UI changes. Unit testing.",
-                    technologies: "ES6, React, Redux, Less, Webpack, Mocha, Enzyme, Chai",
-                },
+                participation: "Produced good-quality code, followed project style guide. Refactoring for UI changes. Unit testing.",
+                technologies: "ES6, React, Redux, Less, Webpack, Mocha, Enzyme, Chai",
             },
         ],
     },
@@ -179,10 +173,8 @@ export const experiences: Experience[] = [
                 id: 0,
                 title: "Project 1",
                 customer: "Digital Agency",
-                data: {
-                    participation: "Sitebuild Implement of small new features (incl. UI changes). Find parts of code which should be refactoring. Refactoring for UI changes. Bugfixes.",
-                    technologies: "HTML5, JS, ES6, React Native, CSS3, jQuery, GSAP, PHP",
-                },
+                participation: "Sitebuild Implement of small new features (incl. UI changes). Find parts of code which should be refactoring. Refactoring for UI changes. Bugfixes.",
+                technologies: "HTML5, JS, ES6, React Native, CSS3, jQuery, GSAP, PHP",
             },
         ],
     },
