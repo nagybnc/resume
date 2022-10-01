@@ -1,10 +1,10 @@
-import { Project } from "./utils/configs";
+import { Project } from "../utils/configs";
 
 interface TableProps {
     project: Project;
 }
 
-const Table = ({ project }: TableProps) => {
+const ProjectTable = ({ project }: TableProps) => {
     return (
         <div className="print:text-xs" key={project.customer}>
             {project.customer && <h5 className="mt-4 font-bold">{project.customer}</h5>}
@@ -24,4 +24,4 @@ const Table = ({ project }: TableProps) => {
     );
 };
 
-export default Table;
+export default ProjectTable;

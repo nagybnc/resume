@@ -1,6 +1,6 @@
 import { BriefcaseIcon } from "@heroicons/react/24/outline";
-import Table from "./Table";
-import { Experience, Project } from "./utils/configs";
+import ProjectTable from "./ProjectTable";
+import { Experience, Project } from "../utils/configs";
 
 interface ExperienceBoxProps {
     experience: Experience;
@@ -14,7 +14,7 @@ const ExperienceBox = ({ experience }: ExperienceBoxProps) => {
             </h3>
             <p className="text-sm font-bold text-gray-400 print:text-xs">{experience.date}</p>
             {experience.projects.map((project: Project) => (
-                <Table key={project.id} project={project} />
+                <ProjectTable key={project.id} project={project} />
             ))}
         </div>
     );

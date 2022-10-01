@@ -1,8 +1,8 @@
 import mePicture from "./assets/me.jpeg";
 import { BuildingOffice2Icon, MapPinIcon, EnvelopeIcon, LinkIcon, PrinterIcon, MoonIcon } from "@heroicons/react/24/solid";
 import { experiences, repositories, Repository, Skill, skills } from "./utils/configs";
-import ExperienceBox from "./ExperienceBox";
-import RepositoriesBox from "./RepositoriesBox";
+import ExperienceBox from "./components/ExperienceBox";
+import RepositoriesBox from "./components/RepositoriesBox";
 
 const yearCalculator = () => {
     const date1 = new Date("08/01/2016");

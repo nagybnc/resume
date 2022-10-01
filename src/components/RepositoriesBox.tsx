@@ -1,5 +1,5 @@
 import { BookmarkSquareIcon } from "@heroicons/react/24/outline";
-import { Repository } from "./utils/configs";
+import { Repository } from "../utils/configs";
 
 interface RepositoriesBox {
     repository: Repository;
