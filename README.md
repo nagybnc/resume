@@ -3,7 +3,7 @@
 **resume** is a web application which allows you to print the resume
 ~~The resume is available in **light** and **dark mode**.~~
 
-<img src="https://github.com/nagybnc/resume/blob/main/public/resume.png?raw=true" width="1024"/>
+<img src="https://github.com/nagybnc/resume/blob/master/public/resume.png?raw=true" width="1024"/>
 
 ## 📚 Libraries
 
