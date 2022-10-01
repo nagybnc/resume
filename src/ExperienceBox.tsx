@@ -1,4 +1,4 @@
-import { BriefcaseIcon } from "@heroicons/react/24/solid";
+import { BriefcaseIcon } from "@heroicons/react/24/outline";
 import Table from "./Table";
 import { Experience, Project } from "./utils/configs";
 

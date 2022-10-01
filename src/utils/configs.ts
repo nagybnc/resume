@@ -5,7 +5,7 @@ export interface Skill {
     logoColor: string;
 }
 
-export interface Respository {
+export interface Repository {
     id: number;
     title: string;
     url: string;
@@ -18,7 +18,7 @@ export interface Respository {
 export interface Project {
     id: number;
     title: string;
-    customer: string;
+    customer?: string;
     participation: string;
     technologies: string;
 }
@@ -110,7 +110,7 @@ export const skills: Skill[] = [
     },
 ];
 
-export const repositories: Respository[] = [
+export const repositories: Repository[] = [
     {
         id: 0,
         title: "weather-app",
@@ -172,7 +172,6 @@ export const experiences: Experience[] = [
             {
                 id: 0,
                 title: "Project 1",
-                customer: "Digital Agency",
                 participation: "Sitebuild Implement of small new features (incl. UI changes). Find parts of code which should be refactoring. Refactoring for UI changes. Bugfixes.",
                 technologies: "HTML5, JS, ES6, React Native, CSS3, jQuery, GSAP, PHP",
             },

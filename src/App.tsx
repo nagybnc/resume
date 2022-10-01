@@ -1,7 +1,8 @@
 import mePicture from "./assets/me.jpeg";
 import { BuildingOffice2Icon, MapPinIcon, EnvelopeIcon, LinkIcon, PrinterIcon, MoonIcon } from "@heroicons/react/24/solid";
-import { experiences, Skill, skills } from "./utils/configs";
+import { experiences, repositories, Repository, Skill, skills } from "./utils/configs";
 import ExperienceBox from "./ExperienceBox";
+import RepositoriesBox from "./RepositoriesBox";
 
 const yearCalculator = () => {
     const date1 = new Date("08/01/2016");
@@ -80,6 +81,12 @@ function App() {
                     {experiences.map((experience) => (
                         <ExperienceBox key={experience.id} experience={experience} />
                     ))}
+                    <h1 className="print:text-basic mb-2 text-lg text-gray-300">GitHub Repositories</h1>
+                    <div className="grid grid-cols-2 gap-2">
+                        {repositories.map((repository: Repository) => (
+                            <RepositoriesBox key={repository.title} repository={repository} />
+                        ))}
+                    </div>
                 </div>
             </section>
         </div>

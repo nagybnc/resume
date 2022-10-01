@@ -7,8 +7,8 @@ interface TableProps {
 const Table = ({ project }: TableProps) => {
     return (
         <div className="print:text-xs" key={project.customer}>
-            <h5 className="mt-4 mb-2 font-bold">{project.customer}</h5>
-            <table className="w-full table-auto border border-[#30363d]">
+            {project.customer && <h5 className="mt-4 font-bold">{project.customer}</h5>}
+            <table className="mt-2 w-full table-auto border border-[#30363d]">
                 <tbody>
                     <tr>
                         <td className="border border-[#30363d] p-4 print:p-2">Participation</td>
