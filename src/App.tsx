@@ -1,5 +1,6 @@
 import mePicture from "./assets/me.jpeg";
 import { BuildingOffice2Icon, MapPinIcon, EnvelopeIcon, LinkIcon, PrinterIcon, MoonIcon } from "@heroicons/react/24/solid";
+import { Skill, skills } from "./utils/configs";
 
 const yearCalculator = () => {
     const date1 = new Date("08/01/2016");
@@ -54,6 +55,14 @@ function App() {
                         </li>
                     </ul>
                     <div className="mt-4 border border-gray-700"></div>
+                    <h3 className="my-4 font-semibold text-gray-300 print:text-xs">Technologies</h3>
+                    <ul className="flex flex-wrap gap-2 print:flex-col">
+                        {skills.map((skill: Skill) => (
+                            <li key={skill.title}>
+                                <img src={`https://img.shields.io/badge/${skill.value}?style=for-the-badge&logo=${skill.logo}&logoColor=${skill.logoColor}`} />
+                            </li>
+                        ))}
+                    </ul>
                 </div>
                 <div className="my-8 rounded-lg border border-[#30363d] p-4 text-gray-300 print:my-4 print:border-none">
                     <p className="mb-4 font-mono text-xs">
@@ -63,7 +72,7 @@ function App() {
                         <li>🌟 Result oriented, highly motivated and proactive Frontend Developer.</li>
                         <li>📰 Over {yearCalculator()} years of experience in software development industry.</li>
                         <li>🛠️ Experienced in working in multicultural and rapidly changing environment.</li>
-                        <li>📜 Bachelor’s degree in computer science.</li>
+                        <li>📜 Bachelor’s degree in Engineering Information Technology (Computer Science).</li>
                     </ul>
                 </div>
             </section>
