@@ -1,7 +1,7 @@
 # RESUME 📜
 
-**resume** is a web application which allows you to print the resume
-~~The resume is available in **light** and **dark mode**.~~
+The **resume** is a web application which allows you to print the resume.\
+It is a formal document that provides an overview of my professional qualifications.
 
 <img src="https://github.com/nagybnc/resume/blob/master/public/resume.png?raw=true" width="1024"/>
 
