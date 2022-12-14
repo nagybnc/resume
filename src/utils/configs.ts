@@ -108,6 +108,12 @@ export const skills: Skill[] = [
         logo: "webpack",
         logoColor: "black",
     },
+    {
+        title: "Azure",
+        value: "azure-%230072C6",
+        logo: "microsoftazure",
+        logoColor: "white",
+    },
 ];
 
 export const repositories: Repository[] = [
@@ -143,9 +149,22 @@ export const repositories: Repository[] = [
 
 export const experiences: Experience[] = [
     {
+        id: 1,
+        title: "NN Group - Senior Frontend Developer",
+        date: "(Nov 2022 – Presents)",
+        projects: [
+            {
+                id: 0,
+                title: "Project 1",
+                participation: "Find parts of code which should be refactoring. Bugfixes. Encouraging innovative solutions in fastening delivery, suggesting new IT processes.",
+                technologies: "React, TypeScript, Recoil, Material-UI, MS Azure",
+            },
+        ],
+    },
+    {
         id: 0,
         title: "EPAM Systems - Frontend Developer",
-        date: "(Aug 2017 – Presents)",
+        date: "(Aug 2017 – Oct 2022)",
         projects: [
             {
                 id: 0,
@@ -163,18 +182,5 @@ export const experiences: Experience[] = [
                 technologies: "ES6, React, Redux, Less, Webpack, Mocha, Enzyme, Chai",
             },
         ],
-    },
-    {
-        id: 1,
-        title: "Netwerk Media - Web Developer",
-        date: "(Aug 2016 – Aug 2017)",
-        projects: [
-            {
-                id: 0,
-                title: "Project 1",
-                participation: "Sitebuild Implement of small new features (incl. UI changes). Find parts of code which should be refactoring. Refactoring for UI changes. Bugfixes.",
-                technologies: "HTML5, JS, ES6, React Native, CSS3, jQuery, GSAP, PHP",
-            },
-        ],
-    },
+    }
 ];
