@@ -151,12 +151,12 @@ export const experiences: Experience[] = [
     {
         id: 1,
         title: "NN Group - Senior Frontend Developer",
-        date: "(Nov 2022 – Presents)",
+        date: "(Nov 2022 – Jan 2023)",
         projects: [
             {
                 id: 0,
                 title: "Project 1",
-                participation: "Find parts of code which should be refactoring. Bugfixes. Encouraging innovative solutions in fastening delivery, suggesting new IT processes.",
+                participation: "Find parts of code which should be refactored. Bugfixes. Encouraging innovative solutions in fastening delivery, suggesting new IT processes.",
                 technologies: "React, TypeScript, Recoil, Material-UI, MS Azure",
             },
         ],
