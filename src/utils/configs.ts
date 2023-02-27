@@ -31,6 +31,18 @@ export interface Experience {
 
 export const skills: Skill[] = [
   {
+    title: "React",
+    value: "React-20232A",
+    logo: "react",
+    logoColor: "61DAFB",
+  },
+  {
+    title: "Next.js",
+    value: "Next-black",
+    logo: "next.js",
+    logoColor: "white",
+  },
+  {
     title: "JavaScript",
     value: "JavaScript-323330",
     logo: "javascript",
@@ -53,12 +65,6 @@ export const skills: Skill[] = [
     value: "CSS3-1572B6",
     logo: "css3",
     logoColor: "white",
-  },
-  {
-    title: "React",
-    value: "React-20232A",
-    logo: "react",
-    logoColor: "61DAFB",
   },
   {
     title: "Redux",
