@@ -128,20 +128,19 @@ export const repositories: Repository[] = [
     title: "weather-app",
     url: "https://github.com/nagybnc/weather-app",
     projectUrl: "https://github.com/users/nagybnc/projects/2",
-    description:
-      "Weather status and forecast app, using React JS and OpenWeatherMap API ⛈",
+    description: "Weather status app, using React JS and OpenWeatherMap API ⛈",
     technology: "TypeScript",
     technologyColor: "#3178c6",
   },
   {
     id: 1,
-    title: "JS-Senior-Developer-Growth",
-    url: "https://github.com/nagybnc/JS-Senior-Developer-Growth",
+    title: "ZooMap Explorer",
+    url: "https://github.com/nagybnc/zoomap-explorer",
     projectUrl: "",
     description:
-      "Some great ways to ensure you grow and sustain your career as a JS developer 📈",
-    technology: "CSS",
-    technologyColor: "#563d7c",
+      "App for exploring your surroundings and discovering new zoos 🌎",
+    technology: "React",
+    technologyColor: "#61DAFB",
   },
 
   // {
@@ -158,6 +157,20 @@ export const repositories: Repository[] = [
 export const experiences: Experience[] = [
   {
     id: 0,
+    title: "Arcadia Astronautics - Lead Frontend Developer",
+    date: "(March 2023 – Present)",
+    projects: [
+      {
+        id: 0,
+        title: "Project 1",
+        participation:
+          "I spearheaded the creation of a cutting-edge web platform designed to manage and optimize satellite propulsion systems. I assumed a multifaceted role that included not only leading the development team but also actively contributing to project delivery and management processes. Managed a team of 10 individuals across three countries.",
+        technologies: "React, TypeScript, Next.JS, Cypress, Material-UI, AWS",
+      },
+    ],
+  },
+  {
+    id: 1,
     title: "NN Group - Senior Frontend Developer",
     date: "(Nov 2022 – Jan 2023)",
     projects: [
@@ -171,31 +184,22 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    id: 1,
+    id: 2,
     title: "EPAM Systems - Frontend Developer",
     date: "(Aug 2017 – Oct 2022)",
     projects: [
       {
         id: 0,
         title: "Project 1",
-        customer: "Automotive (JIRA Plugin Development)",
         participation:
-          "Participated in project start from scratch. Played active part in Process of tasks clarification during sprint planning. Demonsrates self-management skills, works without supervision. Plays a mentor role for less experienced colleagues. Conducted interviews with potential candidates, assessing their qualifications, skills, and fit with company culture. Customer-facing role.",
+          "Participated in project start from scratch. Played active part in Process of tasks clarification during sprint planning. Demonsrates self-management skills, works without supervision. Plays a mentor role for less experienced colleagues. Conducted interviews with potential candidates, assessing their skills fit with company culture.",
         technologies:
           "React, TypeScript, Redux, Material-UI, Cypress, Jest, Testing Library",
-      },
-      {
-        id: 1,
-        title: "Project 2",
-        customer: "Banking (Dashboard App)",
-        participation:
-          "Produced good-quality code, followed project style guide. Refactoring for UI changes. Unit testing.",
-        technologies: "ES6, React, Redux, Less, Webpack, Mocha, Enzyme, Chai",
       },
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Netwerk Media - Frontend Developer",
     date: "(Aug 2016 – Aug 2017)",
     projects: [
