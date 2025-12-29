@@ -35,7 +35,7 @@ function App() {
           }}
         />
         <p className="self-center">
-          <a className="underline" href="https://github.com/nagybnc/#">
+          <a className="underline" href="https://github.com/nagybnc/resume">
             https://github.com/nagybnc/resume
           </a>
         </p>
@@ -45,9 +45,10 @@ function App() {
         </div>
       </header>
       <section className="mx-8 flex font-sans print:mx-1 xl:mx-32 2xl:mx-64">
-        <div className="mx-4 mt-8 w-80 flex-none p-4 print:mt-4 print:max-w-[11rem] print:p-0">
+        <div className="mx-4 mt-8 w-80 flex-none p-4 print:mt-4 print:max-w-44 print:p-0">
           <img
             src={mePicture}
+            alt="Bence Nagy profile picture"
             className="mx-4 rounded-full border-2 border-[#30363d] print:p-0"
           />
           <h1 className="mt-6 mb-4">
@@ -87,6 +88,7 @@ function App() {
               <li key={skill.title}>
                 <img
                   src={`https://img.shields.io/badge/${skill.value}?style=for-the-badge&logo=${skill.logo}&logoColor=${skill.logoColor}`}
+                  alt={skill.title}
                 />
               </li>
             ))}

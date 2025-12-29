@@ -1,16 +1,16 @@
 import { BookmarkSquareIcon } from "@heroicons/react/24/outline";
 import { Repository } from "../utils/configs";
 
-interface RepositoriesBox {
+interface RepositoriesBoxProps {
     repository: Repository;
 }
 
-const RepositoriesBox = ({ repository }: RepositoriesBox) => {
+const RepositoriesBox = ({ repository }: RepositoriesBoxProps) => {
     return (
         <div className="flex flex-col gap-2 border border-[#30363d] p-4">
             <h3 className="flex items-center gap-2 text-sm text-[#58a6ff] print:text-xs">
                 <BookmarkSquareIcon className="inline-block h-5 w-5 text-gray-400 print:text-xs" />
-                <a href={repository.url} target="_blank">
+                <a href={repository.url} target="_blank" rel="noopener noreferrer">
                     {repository.title}
                 </a>
             </h3>
@@ -22,7 +22,7 @@ const RepositoriesBox = ({ repository }: RepositoriesBox) => {
                 </div>
                 <p className="rounded-3xl border border-[#30363d] px-1 py-1 text-xs text-gray-400">Public</p>
                 {repository.projectUrl && (
-                    <a href={repository.projectUrl} target="_blank" className="rounded-3xl border border-[#30363d] px-1 py-1 text-xs text-gray-400">
+                    <a href={repository.projectUrl} target="_blank" rel="noopener noreferrer" className="rounded-3xl border border-[#30363d] px-1 py-1 text-xs text-gray-400">
                         GitHub Project
                     </a>
                 )}

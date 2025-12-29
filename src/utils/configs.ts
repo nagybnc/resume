@@ -192,7 +192,7 @@ export const experiences: Experience[] = [
         id: 0,
         title: "Project 1",
         participation:
-          "Participated in project start from scratch. Played active part in Process of tasks clarification during sprint planning. Demonsrates self-management skills, works without supervision. Plays a mentor role for less experienced colleagues. Conducted interviews with potential candidates, assessing their skills fit with company culture.",
+          "Participated in project start from scratch. Played active part in Process of tasks clarification during sprint planning. Demonstrates self-management skills, works without supervision. Plays a mentor role for less experienced colleagues. Conducted interviews with potential candidates, assessing their skills fit with company culture.",
         technologies:
           "React, TypeScript, Redux, Material-UI, Cypress, Jest, Testing Library",
       },
