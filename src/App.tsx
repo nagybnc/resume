@@ -1,4 +1,5 @@
-import mePicture from "./assets/me.jpeg";
+import { useState, useEffect } from "react";
+import mePicture from "@/assets/me.jpeg";
 import {
   BuildingOffice2Icon,
   MapPinIcon,
@@ -6,30 +7,50 @@ import {
   LinkIcon,
   PrinterIcon,
   MoonIcon,
+  SunIcon,
 } from "@heroicons/react/24/solid";
-import {
-  experiences,
-  repositories,
-  Repository,
-  Skill,
-  skills,
-} from "./utils/configs";
-import ExperienceBox from "./components/ExperienceBox";
-import RepositoriesBox from "./components/RepositoriesBox";
+import { experiences, Repository, Skill, skills } from "@/lib";
+import { ExperienceBox, RepositoriesBox } from "@/components";
 
-const yearCalculator = () => {
-  const date1 = new Date("08/01/2016");
-  const date2 = new Date();
-  const diff = date2.getTime() - date1.getTime();
-  return Math.floor(diff / (1000 * 3600 * 24 * 365));
+const CAREER_START = new Date(2016, 7, 1); // August 1, 2016
+
+const getYearsOfExperience = () => {
+  const now = new Date();
+  let years = now.getFullYear() - CAREER_START.getFullYear();
+  if (
+    now <
+    new Date(now.getFullYear(), CAREER_START.getMonth(), CAREER_START.getDate())
+  ) {
+    years--;
+  }
+  return years;
 };
 
 function App() {
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window !== "undefined") {
+      return document.documentElement.classList.contains("dark");
+    }
+    return true;
+  });
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDark]);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+  };
+
   return (
-    <div className="h-full bg-[#0d1117] print:h-screen">
-      <header className="flex h-12 items-center justify-between self-center bg-[#161b22] px-8 text-gray-200 print:px-4 xl:px-32 2xl:px-64">
+    <div className="h-full bg-(--color-bg-primary) print:h-screen">
+      <header className="flex h-12 items-center justify-between print:justify-center self-center bg-(--color-bg-secondary) px-8 text-(--color-text-primary) print:px-4 xl:px-32 2xl:px-64">
         <PrinterIcon
-          className="h-5 w-5 cursor-pointer text-gray-400 hover:text-white"
+          className="h-5 w-5 cursor-pointer text-(--color-icon) hover:text-(--color-icon-hover) print:hidden"
           onClick={() => {
             window.print();
           }}
@@ -39,9 +60,19 @@ function App() {
             https://github.com/nagybnc/resume
           </a>
         </p>
-        <div className="flex items-center gap-2">
-          <MoonIcon className="h-5 w-5 cursor-pointer text-gray-400 hover:text-white" />
-          <p className="cursor-pointer text-gray-400 hover:text-white">EN</p>
+        <div className="flex items-center gap-2 print:hidden">
+          {isDark ? (
+            <SunIcon
+              className="h-5 w-5 cursor-pointer text-(--color-icon) hover:text-(--color-icon-hover)"
+              onClick={toggleTheme}
+            />
+          ) : (
+            <MoonIcon
+              className="h-5 w-5 cursor-pointer text-(--color-icon) hover:text-(--color-icon-hover)"
+              onClick={toggleTheme}
+            />
+          )}
+          <p className="cursor-not-allowed text-(--color-icon)">EN</p>
         </div>
       </header>
       <section className="mx-8 flex font-sans print:mx-1 xl:mx-32 2xl:mx-64">
@@ -49,38 +80,38 @@ function App() {
           <img
             src={mePicture}
             alt="Bence Nagy profile picture"
-            className="mx-4 rounded-full border-2 border-[#30363d] print:p-0"
+            className="rounded-full border-2 border-(--color-border) print:p-0 aspect-square w-full object-cover"
           />
           <h1 className="mt-6 mb-4">
-            <span className="block text-2xl font-semibold leading-5 text-gray-200 print:text-lg">
+            <span className="block text-2xl font-semibold leading-5 text-(--color-text-primary) print:text-lg">
               Bence Nagy
             </span>
-            <span className="block text-xl text-gray-500 print:text-sm">
-              nagybnc
+            <span className="block text-xl text-(--color-text-secondary) print:text-sm">
+              @nagybnc
             </span>
           </h1>
-          <ul className="mt-2 list-none space-y-1 text-sm text-gray-200 print:text-xs">
+          <ul className="mt-2 list-none space-y-1 text-sm text-(--color-text-primary) print:text-xs">
             <li>
-              <BuildingOffice2Icon className="mr-2 inline-block h-5 w-5 text-gray-400 print:h-3 print:w-3" />
-              Frontend Developer
+              <BuildingOffice2Icon className="mr-2 inline-block h-5 w-5 text-(--color-icon) print:h-3 print:w-3" />
+              Frontend & AI native Engineer
             </li>
             <li>
-              <MapPinIcon className="mr-2 inline-block h-5 w-5 text-gray-400 print:h-3 print:w-3" />
+              <MapPinIcon className="mr-2 inline-block h-5 w-5 text-(--color-icon) print:h-3 print:w-3" />
               Budapest, Hungary
             </li>
             <li>
-              <EnvelopeIcon className="mr-2 inline-block h-5 w-5 text-gray-400 print:h-3 print:w-3" />
+              <EnvelopeIcon className="mr-2 inline-block h-5 w-5 text-(--color-icon) print:h-3 print:w-3" />
               nagybnc@gmail.com
             </li>
             <li>
-              <LinkIcon className="mr-2 inline-block h-5 w-5 text-gray-400 print:h-3 print:w-3" />
+              <LinkIcon className="mr-2 inline-block h-5 w-5 text-(--color-icon) print:h-3 print:w-3" />
               <a href="https://www.linkedin.com/in/nagybnc/">
                 linkedin.com/in/nagybnc
               </a>
             </li>
           </ul>
-          <div className="mt-4 border border-gray-700"></div>
-          <h3 className="my-4 font-semibold text-gray-300 print:text-xs">
+          <div className="mt-4 border border-(--color-border)"></div>
+          <h3 className="my-4 font-semibold text-(--color-text-primary) print:text-xs">
             Technologies
           </h3>
           <ul className="flex flex-wrap gap-2 print:flex-col">
@@ -94,44 +125,41 @@ function App() {
             ))}
           </ul>
         </div>
-        <div className="my-8 rounded-lg border border-[#30363d] p-4 text-gray-300 print:my-4 print:border-none">
+        <div className="my-8 rounded-lg border border-(--color-border) p-4 text-(--color-text-primary) print:my-4 print:border-none">
           <p className="mb-4 font-mono text-xs">
-            nagybnc<span className="mx-1 text-gray-400">/</span>README
-            <span className="text-gray-400">.md</span>
+            nagybnc<span className="mx-1 text-(--color-text-secondary)">/</span>
+            README
+            <span className="text-(--color-text-secondary)">.md</span>
           </p>
-          <ul className="ml-8 list-disc text-sm print:text-xs">
+          <ul className="ml-4 list-disc text-sm print:text-xs">
             <li>
-              🌟 Result oriented, highly motivated and proactive Frontend
-              Developer.
+              🚀 Frontend & AI native Engineer building web applications with
+              LLMs, RAG, and automations.
             </li>
             <li>
-              📰 Over {yearCalculator()} years of experience in software
-              development industry.
+              💼 Over {getYearsOfExperience()} years of experience in the
+              software development industry.
+            </li>
+            <li>
+              🤖 Specialized in React, TypeScript, Python, FastAPI, LLMs, RAG,
+              and prompt engineering.
             </li>
             <li>
               🛠️ Experienced in working in multicultural and rapidly changing
               environment.
             </li>
             <li>
-              📜 Bachelor’s degree in Engineering Information Technology
-              (Computer Science).
+              👥 Led cross-functional teams 10+ developers across multiple
+              countries delivering satellite.
             </li>
           </ul>
-          <div className="my-6 border-2 border-gray-700 print:my-2"></div>
-          <h1 className="mb-4 text-2xl text-gray-300 print:mb-2 print:text-lg">
+          <div className="my-6 border-2 border-(--color-border) print:my-4"></div>
+          <h1 className="mb-4 text-2xl text-(--color-text-primary) print:mb-2 print:text-lg">
             Experiences
           </h1>
           {experiences.map((experience) => (
             <ExperienceBox key={experience.id} experience={experience} />
           ))}
-          <h1 className="print:text-basic mb-2 text-lg text-gray-300">
-            GitHub Repositories
-          </h1>
-          <div className="grid grid-cols-2 gap-2">
-            {repositories.map((repository: Repository) => (
-              <RepositoriesBox key={repository.title} repository={repository} />
-            ))}
-          </div>
         </div>
       </section>
     </div>
